@@ -17,13 +17,13 @@ public class Board {
     public static Board createBlankBoard(){
         Board board = new Board();
 
-        for (int i = 0; i < 8; i++){
-            for (int j = 0; j < 8; j++){
-                board.board[i][j] = new BlankSquare(i, j, "");
+        for (int i = 1; i <= 8; i++){
+            for (int j = 1; j <= 8; j++){
+                board.board[i - 1][j - 1] = new BlankSquare(i, j , "");
             }
         }
 
-        return new Board();
+        return board;
     }
 
     public static Board createStandartBoard(){
@@ -135,7 +135,7 @@ public class Board {
             Bishop bishop = (Bishop) figure;
 
             for (int[] square: bishop.pathToSquare(rankFinal, fileFinal)){
-                if (!(board[square[0] - 1][square[1] - 1].getClass() == BlankSquare.class)){
+                if (!isBlank(square)){
                     return false;
                 }
             }
@@ -150,7 +150,7 @@ public class Board {
             Rook rook = (Rook) figure;
 
             for (int[] square: rook.pathToSquare(rankFinal, fileFinal)){
-                if (isBlank(square)){
+                if (!isBlank(square)){
                     return false;
                 }
             }
@@ -192,7 +192,7 @@ public class Board {
             throw new IllegalArgumentException("Количество координат клетки должно быть ровно 2");
         }
 
-        return board[square[0]][square[1]].getClass() != BlankSquare.class;
+        return board[square[0] - 1][square[1] - 1].getClass() == BlankSquare.class;
     }
 
     public void placePiece(Class<? extends Piece> piece, int rank, int file, String color){

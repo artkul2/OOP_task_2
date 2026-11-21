@@ -18,19 +18,19 @@ public class Queen extends Piece{
         List<int[]> list = new ArrayList<>();
 
         for(int i = 1; rank + i <= 8 && file + i <= 8; i++){    // поля по диагонали
-            list.add(new int[]{rank + i, rank + file});
+            list.add(new int[]{rank + i, file + i});
         }
 
         for(int i = 1; rank - i >= 1 && file + i <= 8; i++){
-            list.add(new int[]{rank - i, rank + file});
+            list.add(new int[]{rank - i, file + i});
         }
 
         for(int i = 1; rank + i <= 8 && file - i >= 1; i++){
-            list.add(new int[]{rank + i, rank - file});
+            list.add(new int[]{rank + i, file - i});
         }
 
         for(int i = 1; rank - i >= 1 && file - i >= 1; i++){
-            list.add(new int[]{rank - i, rank - file});
+            list.add(new int[]{rank - i, file - i});
         }
 
         for(int i = 1; rank + i <= 8; i++){    // поля по горизонтали и вертикали
@@ -57,7 +57,7 @@ public class Queen extends Piece{
             throw new IllegalArgumentException("Координаты клетки за пределами доски");
         }
 
-        if (!listOfAttackingSquares().contains(new int[]{rank, file})){
+        if (!contains(listOfAttackingSquares(), new int[]{rank, file})){
             throw new IllegalArgumentException("Не является битым полем фигуры");
         }
 

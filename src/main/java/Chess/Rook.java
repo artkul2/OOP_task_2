@@ -41,7 +41,7 @@ public class Rook extends Piece{
             throw new IllegalArgumentException("Координаты клетки за пределами доски");
         }
 
-        if (!listOfAttackingSquares().contains(new int[]{rank, file})){
+        if (!contains(listOfAttackingSquares(), new int[]{rank, file})){
             throw new IllegalArgumentException("Не является битым полем фигуры");
         }
 

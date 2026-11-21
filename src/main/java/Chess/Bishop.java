@@ -41,7 +41,7 @@ public class Bishop extends Piece {
             throw new IllegalArgumentException("Координаты клетки за пределами доски");
         }
 
-        if (contains(listOfAttackingSquares(), new int[]{rank, file})){
+        if (!contains(listOfAttackingSquares(), new int[]{rank, file})){
             throw new IllegalArgumentException("Не является битым полем фигуры");
         }
 
