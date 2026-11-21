@@ -50,13 +50,13 @@ public class Rook extends Piece{
         if (this.rank == rank){
             if (this.file > file){
                 for (int i = 1; this.file - i > file; i++){
-                    list.add(new int[]{this.rank, this.file - i - 1});
+                    list.add(new int[]{this.rank, this.file - i});
                 }
             }
 
             if (this.file < file){
                 for (int i = 1; this.file + i < file; i++){
-                    list.add(new int[]{this.rank, this.file + i - 1});
+                    list.add(new int[]{this.rank, this.file + i});
                 }
             }
         }
@@ -64,13 +64,13 @@ public class Rook extends Piece{
         if (this.file == file){
             if (this.rank > rank){
                 for (int i = 1; this.rank - i > rank; i++){
-                    list.add(new int[]{this.rank - i - 1, this.file});
+                    list.add(new int[]{this.rank - i, this.file});
                 }
             }
 
             if (this.rank < rank){
                 for (int i = 1; this.rank + i < rank; i++){
-                    list.add(new int[]{this.rank + i - 1, this.file});
+                    list.add(new int[]{this.rank + i, this.file});
                 }
             }
         }

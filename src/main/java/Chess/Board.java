@@ -141,7 +141,6 @@ public class Board {
             }
 
             if (board[rankFinal - 1][fileFinal - 1].getClass() == BlankSquare.class || Objects.equals(board[rankFinal - 1][fileFinal - 1].color, bishop.invertedColor())){
-                boolean temp2 = bishop.isAttackingSquare(rankFinal, fileFinal);
                 return bishop.isAttackingSquare(rankFinal, fileFinal);
             }
         }

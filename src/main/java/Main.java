@@ -26,6 +26,8 @@ void main(){
     board.print();
     board.move(8, 1, 2, 1);
     board.print();
-    board.move(2, 1, 5, 1);
+    board.move(2, 1, 4, 1);
+    board.print();
+    board.move(4, 1, 4, 8);
     board.print();
 }
