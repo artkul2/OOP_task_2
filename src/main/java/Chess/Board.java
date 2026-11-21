@@ -90,8 +90,8 @@ public class Board {
             throw new IllegalArgumentException("Невозможный ход");
         }
 
-        placePiece(figure.getClass(), rankFinal, fileFinal, figure.color);
         board[rankStart - 1][fileStart - 1] = new BlankSquare(rankStart, fileStart, "");
+        placePiece(figure.getClass(), rankFinal, fileFinal, figure.color);
         changeTurn();
     }
 
@@ -163,7 +163,7 @@ public class Board {
             Queen queen = (Queen) figure;
 
             for (int[] square: queen.pathToSquare(rankFinal, fileFinal)){
-                if (isBlank(square)){
+                if (!isBlank(square)){
                     return false;
                 }
             }

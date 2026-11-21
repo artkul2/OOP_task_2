@@ -1,6 +1,7 @@
 import Chess.Bishop;
 import Chess.Board;
 import Chess.Pawn;
+import Chess.Queen;
 
 void main(){
     Board board = Board.createStandartBoard();
@@ -29,5 +30,17 @@ void main(){
     board.move(2, 1, 4, 1);
     board.print();
     board.move(4, 1, 4, 8);
+    board.print();
+    board.move(1, 4, 1, 3);
+    board.print();
+    board.move(1, 3, 2, 2);
+    board.print();
+    board.move(2, 2, 6, 2);
+    board.print();
+    board.move(6, 2, 8, 4);
+    board.print();
+    board.move(8, 5, 8, 4);
+    board.print();
+    board.move(8, 4, 6, 4);
     board.print();
 }

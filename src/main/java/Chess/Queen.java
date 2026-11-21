@@ -45,7 +45,7 @@ public class Queen extends Piece{
             list.add(new int[]{rank, file + i});
         }
 
-        for(int i = 1; file - i <= 8; i++){
+        for(int i = 1; file - i >= 1; i++){
             list.add(new int[]{rank, file - i});
         }
 
@@ -66,13 +66,13 @@ public class Queen extends Piece{
         if (this.rank == rank){
             if (this.file > file){
                 for (int i = 1; this.file - i > file; i++){
-                    list.add(new int[]{this.rank, this.file - i - 1});
+                    list.add(new int[]{this.rank, this.file - i});
                 }
             }
 
             if (this.file < file){
                 for (int i = 1; this.file + i < file; i++){
-                    list.add(new int[]{this.rank, this.file + i - 1});
+                    list.add(new int[]{this.rank, this.file + i});
                 }
             }
         }
@@ -80,38 +80,38 @@ public class Queen extends Piece{
         if (this.file == file){
             if (this.rank > rank){
                 for (int i = 1; this.rank - i > rank; i++){
-                    list.add(new int[]{this.rank - i - 1, this.file});
+                    list.add(new int[]{this.rank - i, this.file});
                 }
             }
 
             if (this.rank < rank){
                 for (int i = 1; this.rank + i < rank; i++){
-                    list.add(new int[]{this.rank + i - 1, this.file});
+                    list.add(new int[]{this.rank + i, this.file});
                 }
             }
         }
 
         if (rank > this.rank && file > this.file){
             for (int i = 1; this.rank + i < rank; i++){
-                list.add(new int[]{this.rank + i - 1, this.file + i - 1});
+                list.add(new int[]{this.rank + i, this.file + i});
             }
         }
 
         if(rank > this.rank && file < this.file){
             for (int i = 1; this.rank + i < rank; i++){
-                list.add(new int[]{this.rank + i - 1, this.file - i - 1});
+                list.add(new int[]{this.rank + i, this.file - i});
             }
         }
 
         if (rank < this.rank && file > this.file){
             for (int i = 1; this.rank - i > rank; i++){
-                list.add(new int[]{this.rank - i - 1, this.file + i - 1});
+                list.add(new int[]{this.rank - i, this.file + i});
             }
         }
 
         if (rank < this.rank && file < this.file){
             for (int i = 1; this.rank - i > rank; i++){
-                list.add(new int[]{this.rank - i - 1, this.file - i - 1});
+                list.add(new int[]{this.rank - i, this.file - i });
             }
         }
 
